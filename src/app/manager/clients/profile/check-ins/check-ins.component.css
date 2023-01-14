@@ -1,0 +1,19 @@
+.container {
+    padding: 10px;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.right-btn {
+    float: right;
+}
+
+p {
+    text-align: center;
+    padding: 10px;
+}
+
+mat-progress-spinner {
+    margin-left: calc(50% - 25px);
+    margin-bottom: 20px;
+}

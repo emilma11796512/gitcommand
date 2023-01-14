@@ -1,0 +1,42 @@
+{
+  "hosting": {
+    "public": "dist/gym-webapp/fr",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "predeploy": [
+      "npm run lint",
+      "npm run build:fr"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/superadmin/**",
+        "function": "superadmin"
+      },
+      {
+        "source": "/api/admin/**",
+        "function": "admin"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "functions": {
+    "predeploy": [
+      "npm --prefix functions run lint",
+      "npm --prefix functions run build"
+    ],
+    "source": "functions"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}

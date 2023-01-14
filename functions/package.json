@@ -1,0 +1,41 @@
+{
+  "name": "gym-webapp-backend",
+  "version": "0.4.3",
+  "description": "A backend cloud-functions for gym-webapp",
+  "author": {
+    "name": "Salah E. Loukili",
+    "email": "salah.loukili@gmail.com"
+  },
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/salah3x/gym-webapp/tree/master/functions"
+  },
+  "homepage": "http://gym-webapp.firebaseapp.com/api",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.8.0",
+    "firebase-functions": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.3"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "private": true
+}
